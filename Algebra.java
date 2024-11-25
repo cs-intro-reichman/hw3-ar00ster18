@@ -78,7 +78,7 @@ public class Algebra {
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
 		int quotient = 0;
-		if (x1 > 0){
+		if (x1 >= 0){
 			while(x1 >= x2){
 				x1 = minus(x1, x2);
 				quotient++;
@@ -101,8 +101,12 @@ public class Algebra {
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
 		int root = 1;
-		while (root < div(x, root)){
-			root++;
+		if(x != 0){
+			while (root < div(x, root)){
+				root++;
+			}
+		} else {
+			root = 0;
 		}
 		return root;
 	}	  	  
