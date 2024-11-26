@@ -112,7 +112,10 @@ public class Algebra {
 	public static int sqrt(int x) {
 		int root = 1;
 		if(x != 0){
-			while (root < div(x, root)){
+			while(times(root, root) != x){
+				if (times(plus(root, 1), plus(root, 1)) > x){
+					return root;
+				}
 				root++;
 			}
 		} else {
