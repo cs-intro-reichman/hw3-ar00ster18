@@ -86,12 +86,12 @@ public class Algebra {
 		} else if (x1 > 0 && x2 < 0){
 			while(x1 >= times(-1, x2)){
 				x1 = plus(x1, x2);
-				quotient++;
+				quotient--;
 			}
 		} else if (x1 < 0 && x2 > 0){
 			while(x1 <= times(-1, x2)){
 				x1 = plus(x1, x2);
-				quotient++;
+				quotient--;
 			}
 		} else if (x1 < 0 && x2 < 0){
 			while (x1 <= x2){
