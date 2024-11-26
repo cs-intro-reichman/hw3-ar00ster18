@@ -61,17 +61,13 @@ public class LoanCalc {
         double L = loan/n;
 		double H = 2*loan;
 		double g = (L + H)/2;
-		double endL = endBalance(loan, rate, n, L);
-		double endg = endBalance(loan, rate, n, g);
 		while(H - L > epsilon){
-			if(endg * endL > 0){
+			if(endBalance(loan, rate, n, g)*endBalance(loan, rate, n, L) > 0){
 				L = g;
-				endL = endg;
 			}else{
 				H = g;
 			}
 			g = (L + H)/2;
-			endg = endBalance(loan, rate, n, g);
 			iterationCounter++;
 		}
 		return g;
